@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 100vh;
+    background: url(./images/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 7%;
+}
+
+.titulo {
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    top: 20px;
+    user-select: none;
+    color: #fff;
+    font-size: 3.5em;
+}
+
+.titulo::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.titulo:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.calculadora {
+    position: relative;
+    height: 80vh;
+    width: 40vw;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    backdrop-filter: blur(20px) brightness(75%);
+    padding: 20px;
+    margin-top: 1.2em;
+    border-radius: 1em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+/* Animação da borda da calculadora feita com auxílio do Copilot (svg e @keyframes) */
+.border-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: #fff;
+    stroke-width: .5;
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    animation: dash 5s linear infinite;
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.calculadora-tela {
+    grid-column: span 4;
+    background-color: transparent;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-bottom: solid 2px #feb8ff;
+}
+
+.resultado {
+    padding-right: 1.5em;
+    font-size: 38px;
+    font-weight: 550;
+    color: #fff;
+    font-family: 'Arsenal SC', serif;
+    width: 100%;
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.fonte-reduzida {
+    font-size: 32px;
+}
+
+.double {
+    grid-column: span 2;
+}
+
+.calculadora-btn {
+    position: relative;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+}
+
+.calculadora-btn::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.calculadora-btn:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.btn-apagar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+
+.numero {
+    color: #feb8ff;
+    font-weight: 400;
+    font-size: 28px;
+    font-family: 'Arsenal SC', serif;
+}
+
+.simbolo {
+    color: #fff;
+    font-size: 32px;
+    font-weight: 500;
+    font-family: 'Arsenal SC', serif;
+}
+
+@media screen and (max-width: 1550px) {
+    .calculadora {
+        width: 60vw;
+        height: 80vh;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .titulo {
+        font-size: 32px;
+        top: 0;
+    }
+    
+    .calculadora {
+        width: 70vw;
+        height: 400px;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .calculadora {
+        width: 90vw;
+        height: 80vh;
+    }
+
+    .resultado {
+        padding-right: .5em;
+        font-size: 24px;
+    }
+
+    .numero, .simbolo {
+        font-size: 18px;
+    }
+}

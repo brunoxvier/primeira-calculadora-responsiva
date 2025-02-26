@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bruno | Cálculos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="./images/icons8-calculator-16.png" type="image/x-icon">
+</head>
+<body>
+    <h1 class="titulo">Bruno Cálculos</h1>
+    <div class="calculadora">
+        <!--  Animação da borda da calculadora feita com auxílio do Copilot (svg e @keyframes) -->
+        <svg class="border-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <rect x="0" y="0" width="100" height="100" ry="3.5"/>
+        </svg>
+        <section class="calculadora-tela"><span class="resultado">0</span></section>
+        <button class="calculadora-btn double simbolo" value="C">C</button>
+        <button class="calculadora-btn simbolo" value="x"><span class="btn-apagar"><ion-icon name="backspace-outline"></ion-icon></span></button>
+        <button class="calculadora-btn simbolo" value="=">=</button>
+        <button class="calculadora-btn numero" value="7">7</button>
+        <button class="calculadora-btn numero" value="8">8</button>
+        <button class="calculadora-btn numero" value="9">9</button>
+        <button class="calculadora-btn simbolo" value="/">/</button>
+        <button class="calculadora-btn numero" value="4">4</button>
+        <button class="calculadora-btn numero" value="5">5</button>
+        <button class="calculadora-btn numero" value="6">6</button>
+        <button class="calculadora-btn simbolo" value="×">×</button>
+        <button class="calculadora-btn numero" value="1">1</button>
+        <button class="calculadora-btn numero" value="2">2</button>
+        <button class="calculadora-btn numero" value="3">3</button>
+        <button class="calculadora-btn simbolo" value="-">-</button>
+        <button class="calculadora-btn numero" value="0">0</button>
+        <button class="calculadora-btn simbolo" value="+/-">+/-</button>
+        <button class="calculadora-btn simbolo" value=".">.</button>
+        <button class="calculadora-btn simbolo" value="+">+</button>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
